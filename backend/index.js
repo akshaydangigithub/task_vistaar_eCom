@@ -16,7 +16,7 @@ app.use(logger("dev"));
 
 // cors
 const coreOptions = {
-  origin: "http://localhost:5173",
+  origin: process.env.FRONTEND_URL,
   credentials: true,
 };
 app.use(cors(coreOptions));

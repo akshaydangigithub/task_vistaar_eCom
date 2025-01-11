@@ -36,11 +36,23 @@ const Login = () => {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    if(formData.role === "user"){
-      dispatch(asyncsigninuser(formData));
+    if (formData.role === "user") {
+      try {
+        setLoading(true);
+        await dispatch(asyncsigninuser(formData));
+      } catch (error) {
+      } finally {
+        setLoading(false);
+      }
     }
-    if(formData.role === "admin"){
-      dispatch(asyncsigninadmin(formData));
+    if (formData.role === "admin") {
+      try {
+        setLoading(true);
+        await dispatch(asyncsigninadmin(formData));
+      } catch (error) {
+      } finally {
+        setLoading(false);
+      }
     }
   };
 

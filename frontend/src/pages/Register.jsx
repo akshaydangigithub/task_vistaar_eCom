@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import { useDispatch } from "react-redux";
 import { asyncsignupuser } from "../store/Actions/userAction";
@@ -14,14 +14,23 @@ const Register = () => {
     password: "",
   });
 
+  const navigate = useNavigate();
+
   const dispatch = useDispatch();
 
   const [loading, setLoading] = useState(false);
 
   const handleRegister = async (e) => {
     e.preventDefault();
-    setLoading(true);
-    dispatch(asyncsignupuser(formData));
+
+    try {
+      setLoading(true);
+      await dispatch(asyncsignupuser(formData));
+      navigate("/login");
+    } catch (error) {
+    } finally {
+      setLoading(false);
+    }
   };
   return (
     <>

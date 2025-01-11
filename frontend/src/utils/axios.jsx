@@ -5,7 +5,6 @@ export const BaseURL = "https://task-vistaar-e-com.vercel.app/";
 
 const instance = axios.create({
   baseURL: BaseURL,
-  withCredentials: true,
 });
 
 export default instance;

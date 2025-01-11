@@ -23,7 +23,7 @@ export const asyncsignupuser = (newuser) => async (dispatch, getState) => {
     const { data } = await axios.post("api/user/signup", newuser);
     if (data.success) {
       dispatch(adduser(data?.data));
-      toast.success(data.message);
+      toast.success("User created successfully");
     }
   } catch (error) {
     toast.error(error?.response?.data?.message);

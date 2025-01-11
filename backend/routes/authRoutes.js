@@ -14,7 +14,7 @@ router.get(
 router.get(
   "/google/callback",
   passport.authenticate("google", {
-    failureRedirect: `${process.env.FRONTEND_URL}login`,
+    failureRedirect: `${process.env.FRONTEND_URL}#/login`,
   }),
   (req, res) => {
     const token = req.user.getjwtoken();
@@ -25,7 +25,7 @@ router.get(
 
     res.cookie("token", token, option);
 
-    res.redirect(`${process.env.FRONTEND_URL}user/dashboard`);
+    res.redirect(`${process.env.FRONTEND_URL}#/user/dashboard`);
   }
 );
 

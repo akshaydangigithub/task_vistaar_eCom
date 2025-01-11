@@ -11,9 +11,7 @@ This project is a full-stack e-commerce platform built with React, Redux, and Ta
 - [Setup Instructions](#setup-instructions)
   - [Backend Setup](#backend-setup)
   - [Frontend Setup](#frontend-setup)
-- [Scripts](#scripts)
-- [License](#license)
-
+  
 ## Features
 
 - User authentication and authorization

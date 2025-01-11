@@ -21,6 +21,8 @@ router.get(
     const option = {
       expires: new Date(Date.now() + 1 * 60 * 60 * 1000), // 1 hour
       httpOnly: true,
+      secure: true,
+      sameSite: "None",
     };
 
     res.cookie("token", token, option);

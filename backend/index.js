@@ -14,12 +14,14 @@ const app = express();
 // logger
 app.use(logger("dev"));
 
-// cors
-const coreOptions = {
-  origin: process.env.FRONTEND_URL,
-  credentials: true,
-};
-app.use(cors(coreOptions));
+app.use(cors());
+// CORS Configuration
+app.use((req, res, next) => {
+  res.header(`Access-Control-Allow-Origin`, `*`);
+  res.header(`Access-Control-Allow-Methods`, `GET,PUT,POST,DELETE`);
+  res.header(`Access-Control-Allow-Headers`, `Content-Type`);
+  next();
+});
 
 // passport
 app.use(passport.initialize());

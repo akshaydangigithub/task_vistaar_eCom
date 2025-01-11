@@ -49,16 +49,22 @@ This project is a full-stack e-commerce platform built with React, Redux, and Ta
 
 Create a `.env` file in the `backend` directory with the following variables:
 
+```sh
 PORT=8080
 MONGODB_URL=<your-mongodb-url>
 EXPRESS_SESSION_SECRET=<your-session-secret>
 JWT_SECRET=<your-jwt-secret>
 JWT_EXPIRES_IN=24h
 FRONTEND_URL=http://localhost:5173/
+BACKEND_URL=http://localhost:8080/
 
-PUBLICK_KEY_IMAGEKIT=<your-imagekit-public-key> PRIVATE_KEY_IMAGEKIT=<your-imagekit-private-key> ENDPOINT_URL_IMAGEKIT=<your-imagekit-endpoint-url>
+PUBLICK_KEY_IMAGEKIT=<your-imagekit-public-key>
+PRIVATE_KEY_IMAGEKIT=<your-imagekit-private-key> 
+ENDPOINT_URL_IMAGEKIT=<your-imagekit-endpoint-url>
 
-GOOGLE_CLIENT_ID=<your-google-client-id> GOOGLE_CLIENT_SECRET=<your-google-client-secret>
+GOOGLE_CLIENT_ID=<your-google-client-id>
+GOOGLE_CLIENT_SECRET=<your-google-client-secret>
+```
 
 ### Frontend
 
